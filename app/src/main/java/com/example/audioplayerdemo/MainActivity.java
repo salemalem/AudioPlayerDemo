@@ -74,7 +74,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 //                Log.i("scrubber value", Integer.toString(progress));
-                mPlayer.seekTo(progress);
+                if (fromUser) {
+                    mPlayer.seekTo(progress);
+                }
             }
 
             @Override
